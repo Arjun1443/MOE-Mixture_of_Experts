@@ -39,5 +39,5 @@ The model replaces the standard Feed-Forward Network (FFN) found in vanilla Tran
 
 1. Clone the repository:
    ```bash
-   git clone [https://github.com/yourusername/makeMoE-from-scratch.git](https://github.com/yourusername/makeMoE-from-scratch.git)
+   git clone [https://github.com/Arjun1443/makeMoE-from-scratch.git](https://github.com/Arjun1443/makeMoE-from-scratch.git)
    cd makeMoE-from-scratch
