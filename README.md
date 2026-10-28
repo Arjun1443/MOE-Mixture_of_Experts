@@ -1,5 +1,19 @@
 # Sparse Mixture of Experts — Study Notebook
 
+## Interactive Streamlit app
+
+A companion application is available in [streamlit_app/app.py](streamlit_app/app.py).
+
+```bash
+python -m pip install -r streamlit_app/requirements.txt
+python -m streamlit run streamlit_app/app.py
+```
+
+This is a seeded routing simulation, not trained language-model inference.
+
+See [DEPLOYMENT.md](DEPLOYMENT.md) for Community Cloud setup, validation coverage, and runtime requirements. A live deployment is not yet confirmed.
+
+
 A PyTorch study notebook exploring expert modules, top-k routing, noisy gating, and integration into a decoder-style language model.
 
 ## Why this project matters
