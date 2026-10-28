@@ -1,43 +1,39 @@
-# makeMoE: Mixture of Experts from Scratch
+# Sparse Mixture of Experts — Study Notebook
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/AviSoori1x/makeMoE/blob/main/makeMoE_from_Scratch.ipynb)
+A PyTorch study notebook exploring expert modules, top-k routing, noisy gating, and integration into a decoder-style language model.
 
-A PyTorch implementation of a **Sparse Mixture of Experts (MoE)** Language Model, built from the ground up. 
+## Why this project matters
 
-This repository demonstrates how to implement the core components of MoE architecture—including Top-k Gating, Noisy Gating, and Expert routing—and integrates them into a Transformer decoder-only architecture (GPT style) to train on the Tiny Shakespeare dataset.
+Sparse routing provides a practical way to understand how a model can select a subset of expert networks for each token.
 
-## 🧠 Core Concepts Implemented
+## Technical focus
 
-This project breaks down the MoE architecture into the following steps:
+PyTorch · neural networks · sparse routing · transformer blocks
 
-1.  **The Expert Module**: A simple Multi-Layer Perceptron (MLP) that acts as an individual "expert."
-2.  **The Router**: A gating mechanism that determines which expert receives which token.
-3.  **Top-k Gating**: Logic to select only the top $k$ experts per token to maintain sparsity and computational efficiency.
-4.  **Noisy Top-k Gating**: Adding standard normal noise to logits to ensure load balancing across experts (balancing exploration vs. exploitation).
-5.  **Sparse MoE Block**: The module that combines the Router and the Experts, performing the weighted sum of expert outputs.
-6.  **The Transformer Block**: Integrating Multi-Head Self-Attention with the Sparse MoE block.
+## Explore the implementation
 
-## 🛠️ Architecture Details
+Open [the notebook](<Mixture_of_Experts_(MoE)_from_Scratch.ipynb>) to inspect preprocessing, implementation, and saved outputs.
 
-The model replaces the standard Feed-Forward Network (FFN) found in vanilla Transformers with a **Sparse MoE Layer**.
+## Run locally
 
-* **Embedding Dimension (`n_embed`)**: 128
-* **Heads (`n_head`)**: 8
-* **Experts (`num_experts`)**: 8
-* **Active Experts per Token (`top_k`)**: 2
-* **Layers (`n_layer`)**: 8
-* **Context Length (`block_size`)**: 32
+```bash
+git clone https://github.com/Arjun1443/MOE-Mixture_of_Experts.git
+cd MOE-Mixture_of_Experts
+python -m venv .venv
+# Activate .venv before continuing.
+python -m pip install torch jupyter
+python -m jupyter notebook
+```
 
-## 🚀 Getting Started
+Select `Mixture_of_Experts_(MoE)_from_Scratch.ipynb` in Jupyter and review its configuration before executing cells in order.
 
-### Prerequisites
+## Reproducibility notes
 
-* Python 3.8+
-* PyTorch
+The notebook contains an upstream reference to [AviSoori1x/makeMoE](https://github.com/AviSoori1x/makeMoE). Credit for the referenced implementation remains with its original authors. Review the notebook's dataset-download and training cells before execution. This repository is presented as learning material, without claiming original authorship of the upstream architecture or code.
 
-### Installation
+Saved notebook outputs describe a prior execution; they are not an independently reproduced benchmark. Dependency versions are not locked, so compatibility may require adjustment.
 
-1. Clone the repository:
-   ```bash
-   git clone [https://github.com/Arjun1443/makeMoE-from-scratch.git](https://github.com/Arjun1443/makeMoE-from-scratch.git)
-   cd makeMoE-from-scratch
+
+## Author
+
+[Naga Anweesh Reddy](https://github.com/Arjun1443/Naga-Anweesh-Reddy) · AI development and technical training
